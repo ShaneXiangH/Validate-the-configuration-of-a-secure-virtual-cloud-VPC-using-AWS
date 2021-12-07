@@ -3,7 +3,7 @@ from argparse import RawTextHelpFormatter
 import argparse
 import sys
 import os
-import urllib
+import urllib2
 import datetime
 
 #Still very active in development, please no bully
@@ -11,15 +11,15 @@ import datetime
 #Wrapper for handling access to the Metadata/User Data/Identity Provider on 169.254.169.254
 def GetInstanceMetadata(path):
 	try:
-		handle = urllib.request.urlopen(("http://169.254.169.254/latest/" + path), timeout = 1)
+		handle = urllib2.urlopen(("http://169.254.169.254/latest/" + path), timeout = 1)
 		output = handle.read()
 		return output
-	except urllib.error.HTTPError as e:
+	except urllib2.HTTPError as e:
 		if e.code == 404:
 			return False
 		else:
 			print ("Failed due to unknown HTTP error")
-	except urllib.error.URLError as e:
+	except urllib2.URLError as e:
 		print ("No metadata detected, are you sure this is ec2?")
 
 #Parse /etc/passwd to find user home directories then check home directories for AWS access keys
