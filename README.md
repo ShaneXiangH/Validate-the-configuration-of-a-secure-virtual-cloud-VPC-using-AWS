@@ -10,6 +10,7 @@ Xinhao Xiang, Jared Li
 ## Code Description ##
 
 `test.py` is the source code for the first experiment
+
 `scanner.py` is the source code for the second and third experiment.
 
 To run the code:
