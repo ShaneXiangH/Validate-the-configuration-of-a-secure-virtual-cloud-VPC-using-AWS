@@ -5,7 +5,7 @@ Cloud (VPC) Using AWS" in 21'Fall ECS 235A: Computer and Information Security Co
 
 ### Authors: ### 
 
-Xinhao Xiang, Jared Li
+Jared Li, Xinhao Xiang 
 
 ## Code Description ##
 
